@@ -1,11 +1,12 @@
 {
-	"name": "puppeteer-stream",
-	"version": "3.0.8",
+	"name": "@skribe/puppeteer-stream",
+	"version": "1.0.0",
 	"description": "",
 	"main": "dist/PuppeteerStream.js",
 	"types": "dist/PuppeteerStream.d.ts",
 	"scripts": {
-		"build": "tsc -b ."
+		"build": "tsc -b .",
+		"npm-publish": "npm run build && npm publish --access public"
 	},
 	"keywords": [
 		"puppeteer",
@@ -15,9 +16,9 @@
 		"screenshot",
 		"recorder"
 	],
-	"author": "SamuelScheit",
+	"author": "lorikku",
 	"repository": {
-		"url": "https://github.com/SamuelScheit/puppeteer-stream"
+		"url": "https://github.com/lorikku/puppeteer-stream"
 	},
 	"license": "MIT",
 	"dependencies": {
