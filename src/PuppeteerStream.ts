@@ -172,6 +172,7 @@ export interface getStreamOptions {
 	bitsPerSecond?: number;
 	frameSize?: number;
 	delay?: number;
+	shouldLogTab?: boolean;
 	/**
 	 * Tab query options to target the correct tab,
 	 * see [Chrome's extensions documentation](https://developer.chrome.com/docs/extensions/reference/api/tabs#method-query) for more info.
@@ -250,7 +251,7 @@ export async function getStream(page: Page, opts: getStreamOptions) {
 	if (!tab) throw new Error("Cannot find tab. Try providing your own tabQuery to getStream options");
 
 	unlock();
-	console.log(tab);
+	if (opts.shouldLogTab) console.log(tab);
 
 	const stream = new Transform({
 		highWaterMark: 1024 * 1024 * highWaterMarkMB,
